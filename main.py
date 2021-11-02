@@ -1,13 +1,15 @@
-import commands
+import config
+from assets import commands, events
 
 def main():
-    commands.clear()
+    events.clear()
+    print(f'{config.NAME} v{config.VERSION}')
     while True:
         cmd = input('> ')
         if cmd == 'help':
             print(commands.help())
         elif cmd == 'clear':
-            commands.clear()
+            events.clear()
         elif cmd == 'info':
             print(commands.info())
         elif cmd == 'exit':
